@@ -64,3 +64,125 @@ The dataset was constructed by scraping listings from:
 
 ## 📊 Data Exploration & Visualization
 
+### 🔍 1. Rent Price Distribution (Before Cleaning)
+Skewed due to extreme outliers.
+
+![Rent Price Distribution](./images/1-RentPriceDist.png)
+
+---
+
+### 📦 2. Boxplot of Raw Rent Prices
+
+Outliers above 100,000 TL distort the distribution.
+
+![Rent Price Boxplot](./images/2-RentPrice_Boxplot.png)
+
+---
+
+### 🧽 3. After Outlier Removal
+
+Boxplot and histogram show a cleaner, more realistic distribution.
+
+![Cleaned Boxplot](./images/3-Cleaned_RentPrice_Boxplot.png) 
+![Cleaned Histogram](./images/4-Cleaned_RentPriceDist.png)
+
+---
+
+### 🛋 4. Room Count vs. Price (Boxenplot)
+
+Price generally increases with more rooms.
+
+![Room Price Boxenplot](./images/5-RoomAndPrice_Boxenplot.png)
+
+---
+
+### 🔥 5. Feature Correlation
+
+Heatmap of correlation between numerical features.
+
+![Correlation Heatmap](./images/6-Heatmap.png)
+
+---
+
+### 📊 6. Pairwise Scatter Plots
+
+Relationship across key numerical features.
+
+![Pairplot](./images/7-Pairplot.png)
+
+---
+
+### 🚿 7. Bathroom Count Distribution
+
+Most listings have 1 bathroom. Few have more.
+
+![Bathroom Histogram](./images/8-FreqOfBathroomNum_Histogram.png)
+
+![Bathroom Pie](./images/9-FreqOfBathroomNum_PieChart.png)
+
+---
+
+### 🏢 8. Floor Number Distribution
+
+Most listings are between 3–6 floors.
+
+![Floor Histogram](./images/10-FloorNumDist_Histogram.png) 
+
+![Floor Pie](./images/11-FloorNumDist_PieChart.png)
+
+---
+
+## 🤖 Machine Learning Models
+
+We applied the following regression models:
+
+| Model               | Preprocessing | Scaled | Notes                    |
+|---------------------|---------------|--------|---------------------------|
+| Linear Regression   | Yes           | Yes    | Baseline model            |
+| Decision Tree       | Yes           | No     | Handles non-linear data   |
+| Random Forest       | Yes           | No     | Best performing model     |
+| SVR                 | Yes           | Yes    | Kernel-based approach     |
+| Lasso Regression    | Yes           | Yes    | For feature selection     |
+
+---
+
+### 🎯 Actual vs Predicted Prices (Best Model)
+
+![Scatter Plot](./images/12-ScatterPlot.png)
+
+---
+
+### 🌟 Feature Importance (Random Forest)
+
+Net usable area and floor level have the most influence on rental prices.
+
+![Feature Importance](./images/13-FeatureImportance.png)
+
+---
+
+### 📉 Model Comparison (MAE / MSE / RMSE)
+
+Random Forest consistently outperformed others.
+
+![Model Comparison](./images/14-ModelComparison.png)
+
+---
+
+## 📌 Key Takeaways
+
+- **Random Forest** gave the lowest prediction error across all metrics.
+- **Net area**, **floor level**, and **number of rooms** are most impactful features.
+- Removing outliers greatly improved model reliability.
+- Visualizations enabled clearer understanding of complex relationships.
+
+---
+
+## 📈 Future Improvements
+
+- Extend scraping to other cities
+- Integrate **time-based price trends**
+- Add **location-based attributes** (distance to metro, university, etc.)
+- Deploy as a **web app** for end users
+
+---
+
