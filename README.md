@@ -57,9 +57,8 @@ The dataset was constructed by scraping listings from:
 
 - Outlier detection using **Interquartile Range (IQR)**
 - One-hot encoding for categorical data
-- Standard scaling for numerical values
-- Train-test split (80/20)
-
+- Standard scaling for numerical values - Scaled all features using StandardScaler
+- Train-test split (70/30 and 80/20 variants)
 ---
 
 ## 📊 Data Exploration & Visualization
@@ -73,7 +72,7 @@ Skewed due to extreme outliers.
 
 ### 📦 2. Boxplot of Raw Rent Prices
 
-Outliers above 100,000 TL distort the distribution.
+Outliers above 50,000 TL distort the distribution.
 
 ![Rent Price Boxplot](./images/2-RentPrice_Boxplot.png)
 
