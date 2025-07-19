@@ -3,11 +3,13 @@ A machine learning project to predict rental apartment prices in Bursa, Turkey. 
 
 # 🏠 House Rental Price Prediction – Bursa, Turkey
 
-## 📂 Overview
+## 📌 Project Summary
 
-With the surge in housing demand and fluctuating rent prices, making data-driven decisions in the real estate market has become increasingly vital. This project focuses on **predicting rental apartment prices** in **Bursa, Turkey**, using real estate data scraped from major property platforms.
+**Objective**: Predict rental apartment prices in **Bursa, Turkey** using real estate data scraped from major Turkish property websites.  
+**Approach**: A full ML pipeline from **data scraping** to **model deployment-ready evaluation**, supported by rich EDA and performance visualizations.
 
 ---
+
 
 ## 🎯 Project Goals
 
@@ -53,15 +55,64 @@ The dataset was constructed by scraping listings from:
 
 ---
 
-## 🧹 Data Preprocessing
+## 🧪 Experiments Conducted
 
-- Outlier detection using **Interquartile Range (IQR)**
-- One-hot encoding for categorical data
-- Standard scaling for numerical values - Scaled all features using StandardScaler
-- Train-test split (70/30 and 80/20 variants)
+### 1. Data Preprocessing
+- Missing value handling (mean imputation)
+- Feature transformation & one-hot encoding
+- Outlier filtering using the IQR method
+- Type conversion for numerical features
+
+### 2. Exploratory Data Analysis (EDA)
+- Visual distribution of prices, room counts, bathroom counts, and floor levels
+- Pairplots and correlation heatmaps
+- Boxenplots to analyze room count vs. price
+- Pie charts for categorical feature visualization
+- Random Forest feature importance analysis
+
+### 3. Model Training & Evaluation
+- Train/test split: 70/30 and 80/20 variations
+- Feature scaling using `StandardScaler`
+- Regression models implemented:
+  - Linear Regression
+  - Decision Tree Regressor
+  - Support Vector Regressor (SVR)
+  - Random Forest Regressor
+  - Lasso Regression
+- Evaluation metrics:
+  - MAE, MSE, RMSE
+  - R² Score
+
+### 4. Single Prediction & User Simulation
+- Each model tested on unseen test data
+- Prediction error (%) calculated
+- Simulated predictions for a custom apartment
+
 ---
 
-## 📊 Data Exploration & Visualization
+## 📈 Key Results
+
+- **Random Forest** had the best performance across all error metrics.
+- Most impactful features: **Net Area**, **Floor Level**, and **Total Number of Floors**.
+- Visualizations helped reveal hidden patterns and feature relationships.
+  
+---
+
+## 📷 Visual Insights
+
+This project is heavily supported with visuals:
+
+- Floor & bathroom distributions  
+- Room count vs. price boxenplots  
+- Correlation heatmaps  
+- Actual vs. Predicted scatter plots  
+- Feature importance charts  
+- Model comparison graphs (MAE, MSE, RMSE)
+
+---
+
+
+## 🧹 Data Preprocessing Visuals
 
 ### 🔍 1. Rent Price Distribution (Before Cleaning)
 Skewed due to extreme outliers.
@@ -86,6 +137,7 @@ Boxplot and histogram show a cleaner, more realistic distribution.
 ![Cleaned Histogram](./images/4-Cleaned_RentPriceDist.png)
 
 ---
+## 📊 Exploratory Data Analysis
 
 ### 🛋 4. Room Count vs. Price (Boxenplot)
 
@@ -173,6 +225,15 @@ Random Forest consistently outperformed others.
 - **Net area**, **floor level**, and **number of rooms** are most impactful features.
 - Removing outliers greatly improved model reliability.
 - Visualizations enabled clearer understanding of complex relationships.
+
+---
+
+## 💡 What We Learned
+
+- **Web scraping real-world data** can be messy but powerful when done correctly.
+- **Outlier removal** dramatically improved the model's predictive power.
+- **Tree-based models**, especially Random Forest, handle this regression task best.
+- **EDA and visualization** guided our feature selection and model tuning effectively.
 
 ---
 
